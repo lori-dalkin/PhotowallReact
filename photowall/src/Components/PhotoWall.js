@@ -11,14 +11,13 @@ function PhotoWall(props) {
                         .sort(function(x,y){
                             return y.id - x.id
                         })
-                        .map((post) => <Photo key={post.id} post={post} onRemovePhoto={props.onRemovePhoto}/>)}
+                        .map((post, index) => <Photo key={index} post={post} index={index} {...props}/>)}
                 </div>
             </div>
 }
 
 PhotoWall.propTypes = {
-    posts: PropTypes.array.isRequired,
-    onRemovePhoto: PropTypes.func.isRequired
+    posts: PropTypes.array.isRequired
 }
 
 /* Changed to be a function as you can see above ^

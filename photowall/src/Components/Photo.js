@@ -24,17 +24,16 @@ class Photo extends Component{
                 <figcaption><p>{post.description}</p></figcaption>
                 <div className="button-container">
                     <button onClick = {() => {
-                        this.props.onRemovePhoto(post)
+                        this.props.removePost(this.props.index)
                     }}>Remove</button>
                 </div>
-            </figure>;
+            </figure>
     }
 }
 
 //Good for debugging, ensures that you keep track of what your props are and what is needed exactly
 Photo.propTypes = {
-    post: PropTypes.object.isRequired,
-    onRemovePhoto: PropTypes.func.isRequired
+    post: PropTypes.object.isRequired
 }
 
 export default Photo;
