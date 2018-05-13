@@ -9,6 +9,8 @@ import rootReducer from './redux/reducer'
 import {Provider} from 'react-redux'
 import App from './Components/App'
 
-const store = createStore(rootReducer); //all this does now is return the initial state
+const store = createStore(rootReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+//all this does now is return the initial state
+
 
 ReactDOM.render(<Provider store={store}><BrowserRouter><App/></BrowserRouter></Provider>, document.getElementById('root'));
